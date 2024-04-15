@@ -3,6 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import axios from 'axios'; // Importa axios para realizar solicitudes HTTP
 import { ref, defineProps } from 'vue';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const props = defineProps({ // obtener los elementos recibidos del servidor
     datos: Array,
@@ -47,5 +48,8 @@ const addToDatabase = async () => {
                 <li v-for="dato in props.datos" :key="dato.id">{{ dato.nom }}</li> <!-- Mostrar cada dato -->
             </ul>
         </div>
+        <div class="ckeditor">
+    <ckeditor :editor="ClassicEditor" v-model="editorData" />
+</div>
     </AuthenticatedLayout>
 </template>

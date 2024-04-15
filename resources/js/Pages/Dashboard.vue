@@ -1,6 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 </script>
 
 <template>
@@ -39,5 +41,6 @@ import { Head } from '@inertiajs/vue3';
             </div>
         </div>
     </div>
+
     </AuthenticatedLayout>
 </template>
