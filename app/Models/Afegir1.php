@@ -11,5 +11,6 @@ class Afegir1 extends Model
 
     protected $table = 'afegir1'; // Especifica el nombre de la tabla
 
-    protected $fillable = ['nom']; // Especifica los campos que pueden ser llenados
+    protected $fillable = ['nom','etapa', 'descripcio', 'visible' ]; // Especifica los campos que pueden ser llenados
+    
 }

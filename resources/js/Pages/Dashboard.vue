@@ -1,5 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { onMounted,ref } from 'vue';
 import { Head } from '@inertiajs/vue3';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
@@ -9,7 +10,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        <div class="flex w-9/12 mx-auto">
+        <div class="flex w-9/12 mx-auto mt-5">
         <div class="carousel w-full">
             <div id="slide1" class="carousel-item relative w-full">
                 <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" class="w-full" />
@@ -40,7 +41,16 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
                 </div>
             </div>
         </div>
-    </div>
 
+    </div>
+    <div class="flex w-9/12 mx-auto mt-12">
+            <p>
+                Estàs cansat d’estar tot el dia a classe i no aprendre res? T’avorreixes davant la pantalla i només fas que mirar “Tik-Tok” o “Instagram”? Bé, potser necessites una motivació extra, i què millor si tens un EVA (Entorn Virtual d’Aprenentatge) que sigui “guai” i al teu gust! 
+            </p>
+        </div>
     </AuthenticatedLayout>
 </template>
+
+<style>
+
+</style>
