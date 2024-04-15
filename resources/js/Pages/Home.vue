@@ -9,7 +9,6 @@ const props = defineProps({ // obtener los elementos recibidos del servidor
     datos: Array,
     datos2: Array,
 });
-const mostrarPoliticaCookies = ref(true);
 const selectedItem = ref(null);
 const datos2 = ref(props.datos2);
 const modal = (dato) => {
@@ -17,9 +16,8 @@ const modal = (dato) => {
     selectedItem.value = dato;
   my_modal_3.showModal(); // Mostrar el modal de edición
 };
-const aceptarCookies = () => {
-    mostrarPoliticaCookies.value = false;
-};
+
+
 </script>
 
 <template>
@@ -70,7 +68,8 @@ const aceptarCookies = () => {
         <div class="mt-4">
             <h2 class="text-lg font-semibold">Cursos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="card w-96 bg-base-100 shadow-xl" v-for="dato in props.datos" :key="dato.id" >
+                <div v-for="dato in props.datos" :key="dato.id">
+                <div class="card w-96 bg-base-100 shadow-xl" v-if="dato.visible === 1" >
                     <div class="card-body">
                         <h2 class="card-title">{{ dato.nom }}</h2>
                         <h3>{{ dato.etapa }}</h3>
@@ -80,6 +79,7 @@ const aceptarCookies = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 
@@ -93,16 +93,13 @@ const aceptarCookies = () => {
         <Continguts  :selectedItem ="selectedItem" :datos2="datos2"/>
       </div>
     </dialog>
-
-            <!-- Modal de política de cookies -->
-            <dialog id="politica_cookies" class="modal" v-show="mostrarPoliticaCookies">
-            <div class="modal-box">
-                <h3 class="font-bold text-lg">Política de Cookies</h3>
-                <p>Aquí va tu mensaje de política de cookies...</p>
-                <button class="bg-blue-500 text-black px-4 py-2 rounded" @click="aceptarCookies">Aceptar</button>
-            </div>
-        </dialog>
+    
+    
     </AuthenticatedLayout>
 </template>
 
-<style></style>
+<style>
+
+
+</style>
+

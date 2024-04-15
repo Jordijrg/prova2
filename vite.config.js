@@ -17,4 +17,11 @@ export default defineConfig({
             },
         }),
     ],
+    test: {
+        globals: true,
+        environmentMatchGlobs: [
+            ["tests/Feature/AdriaAxiosTest.test.js", "node"],
+            ['tests/Feature/**' , 'jsdom']
+        ]
+    },
 });

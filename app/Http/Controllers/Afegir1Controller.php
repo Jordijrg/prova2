@@ -14,6 +14,7 @@ class Afegir1Controller extends Controller
      */
     public function index()
     {
+        $afegir1_con_afegir2 = Afegir1::with('afegir2')->get();
         $datos = Afegir1::all(); // Obtener todos los datos de la tabla afegir1
         $datos2 = Afegir2::all();
     return Inertia::render("Afegir1", ['datos' => $datos, 'datos2'=> $datos2 ]); // Pasar los datos a la vista

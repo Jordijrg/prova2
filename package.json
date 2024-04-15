@@ -20,6 +20,8 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^41.3.0",
-        "@ckeditor/ckeditor5-vue": "^5.1.0"
+        "@ckeditor/ckeditor5-vue": "^5.1.0",
+        "@vue/test-utils": "^2.4.0-alpha.2",
+        "vitest": "^1.5.0"
     }
 }

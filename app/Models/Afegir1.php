@@ -12,5 +12,10 @@ class Afegir1 extends Model
     protected $table = 'afegir1'; // Especifica el nombre de la tabla
 
     protected $fillable = ['nom','etapa', 'descripcio', 'visible' ]; // Especifica los campos que pueden ser llenados
+        // Definir la relación con Afegir2
+        public function afegir2()
+        {
+            return $this->hasMany(Afegir2::class, 'id_curs', 'id');
+        }
     
 }
